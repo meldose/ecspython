@@ -1,7 +1,7 @@
 from neurapy.robot import Robot
 import random
 import time
-r = Robot()
+
 
 
 class Camera:
