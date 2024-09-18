@@ -1,5 +1,8 @@
+from neurapy.robot import Robot
 import random
 import time
+r = Robot()
+
 
 class Camera:
     def __init__(self):
@@ -12,7 +15,7 @@ class Camera:
         self.item_detected = random.choice([True, False])
         if self.item_detected:
             self.item_position = (random.randint(0, 100), random.randint(0, 100))  # Random position on conveyor
-            self.item_type = random.choice(["small", "large", "medium"])  # Simulate different item types
+            self.item_type = random.choice(["circle", "square", "rectangle"])  # Simulate different item types
         else:
             self.item_position = None
             self.item_type = None
