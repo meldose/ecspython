@@ -13,7 +13,7 @@ class Camera:
         self.item_detected = random.choice([True, False])
         if self.item_detected:
             self.item_position = (random.randint(0, 100), random.randint(0, 100))  # Random position on conveyor
-            self.item_type = random.choice(["circle", "square", "rectangle"])  # Simulate different item types
+            self.item_type = random.choice(["circle", "square", "rectangle","oval","star"])  # Simulate different item types
         else:
             self.item_position = None
             self.item_type = None
@@ -22,10 +22,12 @@ class Camera:
 class Cobot:
     def __init__(self, name):
         self.name = name
-        self.is_busy = False
+        self.is_busy = True
+        
+
 
 # PROCESS DONE BY FIRST ROBOT
-    def sort_item(self, position, item_type):
+def sort_item(self, position, item_type):
         if not self.is_busy:
             print(f"{self.name} is moving to sort the item at position {position}, identified as {item_type}.")
             self.is_busy = True
@@ -37,7 +39,8 @@ class Cobot:
             print(f"{self.name} is currently busy sorting.")
             return False
 
-    def pick_sorted_item(self):
+
+def pick_sorted_item(self):
         if not self.is_busy:
             print(f"{self.name} is moving to pick up the sorted item from the sorted area.")
             self.is_busy = True
@@ -54,11 +57,13 @@ class ConveyorTrackingSystem:
         self.cobot2 = Cobot("Cobot 2 (Picker)")
         self.sorted_items = []  # List to track sorted items ready for pickup
 
+
+# SCANNING OF ITEMS HAPPENS FROM THIS MOMENT
     def run(self):
         while True:
             print("Camera scanning for items...")
             item_detected, position, item_type = self.camera.detect_item()
-
+            print("##############################################################") 
             if item_detected:
                 print(f"Item detected at position {position}, identified as {item_type}.")
 
