@@ -2,8 +2,6 @@ from neurapy.robot import Robot
 import random
 import time
 
-
-
 class Camera:
     def __init__(self):
         self.item_detected = False
