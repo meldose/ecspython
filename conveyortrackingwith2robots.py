@@ -31,7 +31,7 @@ def sort_item(self, position, item_type):
         if not self.is_busy:
             print(f"{self.name} is moving to sort the item at position {position}, identified as {item_type}.")
             self.is_busy = True
-            time.sleep(2)  # Simulate sorting time
+            time.sleep(4)  # Simulate sorting time
             print(f"{self.name} has sorted the item (type: {item_type}) and placed it in the sorted area.")
             self.is_busy = False
             return True  # Sorting done
@@ -44,7 +44,7 @@ def pick_sorted_item(self):
         if not self.is_busy:
             print(f"{self.name} is moving to pick up the sorted item from the sorted area.")
             self.is_busy = True
-            time.sleep(2)  # Simulate picking up sorted item
+            time.sleep(4)  # Simulate picking up sorted item
             print(f"{self.name} has picked the sorted item from the sorted area.")
             self.is_busy = False
         else:
@@ -84,7 +84,7 @@ class ConveyorTrackingSystem:
                 self.sorted_items.pop(0)  # Remove the item from the sorted list after it is picked
 
             # Wait before the next camera scan
-            time.sleep(3)
+            time.sleep(5)
 
 # Running the conveyor tracking system
 if __name__ == "__main__":
