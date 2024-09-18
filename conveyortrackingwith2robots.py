@@ -24,6 +24,7 @@ class Cobot:
         self.name = name
         self.is_busy = False
 
+# PROCESS DONE BY FIRST ROBOT
     def sort_item(self, position, item_type):
         if not self.is_busy:
             print(f"{self.name} is moving to sort the item at position {position}, identified as {item_type}.")
