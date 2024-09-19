@@ -5,7 +5,7 @@ import time
 # Defining a Class called Camera 
 class Camera:
     def __init__(self):
-        self.item_detected = True
+        self.item_detected = True # an item is detected and taken into consideration 
         self.item_position = None
         self.item_type = None  # This could represent size, color, or other criteria
 
@@ -13,7 +13,7 @@ class Camera:
 
     def detect_item(self):
         # Randomly simulate item detection
-        self.item_detected = random.choice([True])
+        self.item_detected = random.choice([True, False])
         if self.item_detected:
             self.item_position = (random.randint(0, 150), random.randint(0, 80))  # Random position on conveyor
             self.item_type = random.choice(["circle", "square", "rectangle", "oval", "star"])  # Simulate different item types
