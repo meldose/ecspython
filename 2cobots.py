@@ -57,7 +57,7 @@ def conveyor_tracking(cobot1, cobot2):
         
         # If object reaches Cobot 1 sort position
         if math.isclose(conveyor_position, SORT_POSITION_COBOT1[0], abs_tol=0.05):
-            print("Cobot 1 is ready to pick")
+            print("Cobot 1 is ready to sort the item in the conveyor belt")
             cobot1.move_to_position(SORT_POSITION_COBOT1)
             cobot1.sort_object()
 
@@ -67,7 +67,7 @@ def conveyor_tracking(cobot1, cobot2):
             cobot2.move_to_position(PICK_POSITION_COBOT2)
             cobot2.pick_object()
 
-            # After Cobot 2 picks the object, move both cobots to place it at the drop position
+            # After Cobot 2 picks the object, it places it at the drop position
             cobot2.move_to_position(DROP_POSITION)
             cobot2.place_object(DROP_POSITION)
 
