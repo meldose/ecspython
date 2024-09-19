@@ -33,7 +33,7 @@ class Cobot:
         if not self.is_busy:
             print(f"{self.name} is moving to sort the item at position {position}, identified as {item_type}.")
             self.is_busy = True
-            time.sleep(4)  # Simulate sorting time
+            time.sleep(6)  # Simulate sorting time
             print(f"{self.name} has sorted the item (type: {item_type}) and placed it in the sorted area.")
             self.is_busy = False
             return True  # Sorting done
@@ -45,7 +45,7 @@ class Cobot:
         if not self.is_busy:
             print(f"{self.name} is moving to pick up the sorted item of type {item_type} from the sorted area.")
             self.is_busy = True
-            time.sleep(4)  # Simulate picking up sorted item
+            time.sleep(6)  # Simulate picking up sorted item
             print(f"{self.name} has picked the sorted item of type {item_type} from the sorted area.")
             self.is_busy = False
         else:
@@ -85,7 +85,7 @@ class ConveyorTrackingSystem:
                 print("No item detected.")
 
             # Wait before the next camera scan
-            time.sleep(5)
+            time.sleep(6)
             iteration += 1  # Increment the iteration counter
 
 # Running the conveyor tracking system
