@@ -13,7 +13,7 @@ class Camera:
 
     def detect_item(self):
         # Randomly simulate item detection
-        self.item_detected = random.choice([True, False])
+        self.item_detected = random.choice([True])
         if self.item_detected:
             self.item_position = (random.randint(0, 150), random.randint(0, 80))  # Random position on conveyor
             self.item_type = random.choice(["circle", "square", "rectangle", "oval", "star"])  # Simulate different item types
@@ -62,7 +62,7 @@ class ConveyorTrackingSystem:
 
     def run(self):
         iteration = 0
-        while iteration < 10:  # Add a condition to stop after 10 iterations
+        while iteration < 4:  # Add a condition to stop after 10 iterations
             print("Camera scanning for items on the conveyor belt")
             item_detected, position, item_type = self.camera.detect_item()
             print("##############################################################") 
