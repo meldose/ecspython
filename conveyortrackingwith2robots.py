@@ -61,7 +61,7 @@ class ConveyorTrackingSystem:
 # SCANNING OF ITEMS HAPPENS FROM THIS MOMENT
     def run(self):
         while True:
-            print("Camera scanning for items...")
+            print("Camera scanning for items in Conveyor belt")
             item_detected, position, item_type = self.camera.detect_item()
             print("##############################################################") 
             if item_detected:
