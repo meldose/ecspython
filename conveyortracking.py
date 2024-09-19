@@ -29,7 +29,7 @@ def move_conveyor_object(obj_pos, speed, dt):
     """ Move the object along the conveyor at a given speed. """
     obj_pos[0] += speed * dt  # Move in the x direction
     if obj_pos[0] > conveyor_length:  # Wrap around if it goes past conveyor end
-        obj_pos[0] = 0
+        obj_pos[0] = 9
     return obj_pos
 
 def cobot_control(cobot_pos, target_pos, kp, max_speed, dt):
