@@ -2,11 +2,14 @@ from neurapy.robot import Robot
 import random
 import time
 
+# Defining a Class called Camera 
 class Camera:
     def __init__(self):
         self.item_detected = True
         self.item_position = None
         self.item_type = None  # This could represent size, color, or other criteria
+
+# Defining a function called detect time   
 
     def detect_item(self):
         # Randomly simulate item detection
@@ -18,6 +21,8 @@ class Camera:
             self.item_position = None
             self.item_type = None
         return self.item_detected, self.item_position, self.item_type
+
+# Defining a Class called Cobot 
 
 class Cobot:
     def __init__(self, name):
@@ -45,6 +50,8 @@ class Cobot:
             self.is_busy = False
         else:
             print(f"{self.name} is currently busy picking up items.")
+
+# Defining a Class called Camera 
 
 class ConveyorTrackingSystem:
     def __init__(self):
