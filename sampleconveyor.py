@@ -2,7 +2,7 @@ from neurapy.robot import Robot
 import numpy as np
 import matplotlib.pyplot as plt
 
-# creatting an Conveyor class
+# creatting an Conveyor class 
 class Conveyor:
     def __init__(self, speed=0.1):  # speed in meters per second
         self.speed = speed  # Conveyor speed
