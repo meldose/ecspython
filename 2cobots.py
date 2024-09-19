@@ -4,16 +4,18 @@ import math
 
 # Define constants for conveyor tracking
 CONVEYOR_SPEED = 0.1  # m/s
-PICK_POSITION_COBOT1 = [0.5, 0.0, 0.3]  # XYZ coordinates for cobot 1 pick position
+SORT_POSITION_COBOT1 = [0.5, 0.0, 0.3]  # XYZ coordinates for cobot 1 pick position
 PICK_POSITION_COBOT2 = [1.0, 0.0, 0.3]  # XYZ coordinates for cobot 2 pick position
 DROP_POSITION = [1.5, 0.0, 0.3]  # XYZ coordinates for drop position
 CONVEYOR_LENGTH = 2.0  # Length of the conveyor in meters
 
 # Cobot class for representing cobots in the system
 class Cobot:
-    def __init__(self, name, pick_position):
+    def __init__(self,name,pick_position,sort_position):
         self.name = name
-        self.pick_position = pick_position
+        self.pick_position= pick_position
+        self.sort_position= sort_position
+        
 
     def move_to_position(self, position):
         print(f"{self.name} moving to position {position}")
@@ -39,11 +41,11 @@ def conveyor_tracking(cobot1, cobot2):
         conveyor_position += CONVEYOR_SPEED
         print(f"Object at conveyor position: {conveyor_position:.2f} meters")
         
-        # If object reaches Cobot 1 pick position
-        if math.isclose(conveyor_position, PICK_POSITION_COBOT1[0], abs_tol=0.05):
+        # If object reaches Cobot 1 sort position
+        if math.isclose(conveyor_position, SORT_POSITION_COBOT1[0], abs_tol=0.05):
             print("Cobot 1 is ready to pick")
-            cobot1.move_to_position(PICK_POSITION_COBOT1)
-            cobot1.pick_object()
+            cobot1.move_to_position(SORT_POSITION_COBOT1)
+            cobot1.sort_object()
 
         # If object reaches Cobot 2 pick position
         elif math.isclose(conveyor_position, PICK_POSITION_COBOT2[0], abs_tol=0.05):
@@ -63,7 +65,7 @@ def conveyor_tracking(cobot1, cobot2):
 # Main execution
 if __name__ == "__main__":
     # Initialize cobots
-    cobot1 = Cobot(name="Cobot1", pick_position=PICK_POSITION_COBOT1)
+    cobot1 = Cobot(name="Cobot1", sort_position=SORT_POSITION_COBOT1)
     cobot2 = Cobot(name="Cobot2", pick_position=PICK_POSITION_COBOT2)
 
     # Start conveyor tracking and coordination
