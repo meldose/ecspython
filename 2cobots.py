@@ -10,11 +10,15 @@ DROP_POSITION = [1.5, 0.0, 0.3]  # XYZ coordinates for drop position
 CONVEYOR_LENGTH = 2.0  # Length of the conveyor in meters
 
 # Cobot class for representing cobots in the system
-class Cobot:
-    def __init__(self,name,pick_position,sort_position):
+class Cobot1:
+    def __init__(self,name,sort_position):
+        self.name = name
+        self.sort_position= sort_position
+        
+class Cobot2:
+    def __init__(self,name,pick_position):
         self.name = name
         self.pick_position= pick_position
-        self.sort_position= sort_position
         
 
     def move_to_position(self, position):
@@ -65,8 +69,8 @@ def conveyor_tracking(cobot1, cobot2):
 # Main execution
 if __name__ == "__main__":
     # Initialize cobots
-    cobot1 = Cobot(name="Cobot1", sort_position=SORT_POSITION_COBOT1)
-    cobot2 = Cobot(name="Cobot2", pick_position=PICK_POSITION_COBOT2)
+    cobot1 = Cobot1(name="Cobot1", sort_position=SORT_POSITION_COBOT1)
+    cobot2 = Cobot2(name="Cobot2", pick_position=PICK_POSITION_COBOT2)
 
     # Start conveyor tracking and coordination
     conveyor_tracking(cobot1, cobot2)
