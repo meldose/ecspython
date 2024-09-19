@@ -18,12 +18,12 @@ class Cobot1:
     def move_to_position(self, position):
         print(f"{self.name} moving to position {position}")
         # Simulate move time
-        time.sleep(1)
+        time.sleep(4)
 
     def sort_object(self):
         print(f"{self.name} sorting object")
         # Simulate sorting process
-        time.sleep(1)
+        time.sleep(4)
         
 class Cobot2:
     def __init__(self,name,pick_position):
@@ -34,17 +34,17 @@ class Cobot2:
     def move_to_position(self, position):
         print(f"{self.name} moving to position {position}")
         # Send command to move cobot to the given position
-        time.sleep(1)  # Simulating move time
+        time.sleep(4)  # Simulating move time
 
     def pick_object(self):
         print(f"{self.name} picking up object")
         # Send command to pick the object
-        time.sleep(1)
+        time.sleep(4)
 
     def place_object(self, position):
         print(f"{self.name} placing object at {position}")
         # Send command to place the object
-        time.sleep(1)
+        time.sleep(4)
 
 # Function to track conveyor and coordinate cobots
 def conveyor_tracking(cobot1, cobot2):
@@ -74,7 +74,7 @@ def conveyor_tracking(cobot1, cobot2):
             # Once the object is dropped, reset for the next object
             conveyor_position = 0.0
 
-        time.sleep(1)  # Simulate conveyor movement
+        time.sleep(4)  # Simulate conveyor movement
 
 # Main execution
 if __name__ == "__main__":
