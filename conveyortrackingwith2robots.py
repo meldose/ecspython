@@ -4,7 +4,7 @@ import time
 
 class Camera:
     def __init__(self):
-        self.item_detected = False
+        self.item_detected = True
         self.item_position = None
         self.item_type = None  # This could represent size, color, or other criteria
 
