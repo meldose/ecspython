@@ -15,6 +15,16 @@ class Cobot1:
         self.name = name
         self.sort_position= sort_position
         
+    def move_to_position(self, position):
+        print(f"{self.name} moving to position {position}")
+        # Simulate move time
+        time.sleep(1)
+
+    def sort_object(self):
+        print(f"{self.name} sorting object")
+        # Simulate sorting process
+        time.sleep(1)
+        
 class Cobot2:
     def __init__(self,name,pick_position):
         self.name = name
