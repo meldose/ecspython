@@ -9,7 +9,7 @@ class Conveyor:
     def get_position(self, time):
         """Returns the conveyor position at a given time."""
         return self.speed * time
-
+# Creating an Cobot class
 class Cobot:
     def __init__(self, initial_position=0.0, kp=1.0, ki=0.1, kd=0.05):
         self.position = initial_position
