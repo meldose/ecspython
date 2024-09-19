@@ -20,7 +20,6 @@ class Cobot:
 
     def move_to_position(self, position):
         """Move the cobot to the specified position using the control API."""
-        # Example: control_api.move_to(position)
         print(f"Moving cobot to position {position}")
         # This is where the actual control API logic would go.
 
