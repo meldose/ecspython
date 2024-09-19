@@ -10,7 +10,7 @@ class Camera:
 
     def detect_item(self):
         # Randomly simulate item detection
-        self.item_detected = random.choice([True, False])
+        self.item_detected = random.choice([True])
         if self.item_detected:
             self.item_position = (random.randint(0, 100), random.randint(0, 80))  # Random position on conveyor
             self.item_type = random.choice(["circle", "square", "rectangle","oval","star"])  # Simulate different item types
