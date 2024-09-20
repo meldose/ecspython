@@ -29,7 +29,7 @@ class Cobot:
         self.is_busy = False  # Set cobot to not busy initially
 
     def sort_item(self, position, item_type):
-        if not self.is_busy:
+        if not self.is_busy: # if cobot1 is not busy condition 
             print(f"{self.name} is moving to sort the item at position {position}, identified as {item_type}.")
             self.is_busy = True
             time.sleep(6)  # Simulate sorting time
