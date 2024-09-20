@@ -51,7 +51,7 @@ class Cobot:
         else:
             print(f"{self.name} is currently busy picking up items.")
 
-# Defining a Class called Camera 
+# Defining a Class called ConveyorTrackingSystem 
 
 class ConveyorTrackingSystem:
     def __init__(self):
