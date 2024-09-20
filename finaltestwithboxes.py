@@ -56,7 +56,7 @@ class Cobot:
 
             # Place the picked item in the correct box
             boxes_target=["Box-A","Box-B","Box-C","Box-D","Box-E"]
-            if item_type in boxes:
+            if item_type in boxes_target:
                 boxes[boxes_target].append(boxes_target)  # Add the item to the corresponding box
                 print(f"{self.name} has placed the item of type {item_type} in the {boxes_target} box.")
             else:
