@@ -48,7 +48,6 @@ class Cobot:
 
     # defining a function called pick_sorted_item 
     def pick_sorted_item(self, item_type, boxes_target):
-        # boxes=["Box-A","Box-B","Box-C","Box-D","Box-E"]
         if not self.is_busy:
             print(f"{self.name} is moving to pick up the sorted item of type {item_type} from the sorted area.")
             self.is_busy = True
