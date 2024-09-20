@@ -74,13 +74,13 @@ class ConveyorTrackingSystem:
         self.cobot1 = Cobot("Cobot 1 (Sorter)")
         self.cobot2 = Cobot("Cobot 2 (Picker)")
         self.sorted_items = []  # List to track sorted items ready for pickup
-        # self.boxes_target = {
-        #     "Box-A": [], 
-        #     "Box-B": [], 
-        #     "Box-C": [], 
-        #     "Box-D": [], 
-        #     "Box-E": []
-        # Dictionary to hold boxes for different item types
+        self.boxes_target = {
+            "Box-A": [], 
+            "Box-B": [], 
+            "Box-C": [], 
+            "Box-D": [], 
+            "Box-E": []
+        }                    # Dictionary to hold boxes for different item types
 
     def run(self):
         iteration = 0
