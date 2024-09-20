@@ -28,6 +28,13 @@ class Cobot:
         self.is_busy = False  # Set cobot to not busy initially
 
     def sort_item(self, position, item_type):
+        item_type={ 
+            "Circle", 
+            "square", 
+            "rectangle", 
+            "oval", 
+            "star"
+        }
         if not self.is_busy:
             print(f"{self.name} is moving to sort the item at position {position}, identified as {item_type}.")
             self.is_busy = True
@@ -40,7 +47,8 @@ class Cobot:
             return False
 
     # defining a function called pick_sorted_item 
-    def pick_sorted_item(self, item_type, boxes):
+    def pick_sorted_item(self, item_type, boxes_target):
+        # boxes=["Box-A","Box-B","Box-C","Box-D","Box-E"]
         if not self.is_busy:
             print(f"{self.name} is moving to pick up the sorted item of type {item_type} from the sorted area.")
             self.is_busy = True
@@ -48,9 +56,10 @@ class Cobot:
             print(f"{self.name} has picked the sorted item of type {item_type} from the sorted area.")
 
             # Place the picked item in the correct box
+            boxes_target=["Box-A","Box-B","Box-C","Box-D","Box-E"]
             if item_type in boxes:
-                boxes[item_type].append(item_type)  # Add the item to the corresponding box
-                print(f"{self.name} has placed the item of type {item_type} in the {item_type} box.")
+                boxes[boxes_target].append(boxes_target)  # Add the item to the corresponding box
+                print(f"{self.name} has placed the item of type {item_type} in the {boxes_target} box.")
             else:
                 print(f"Error: No box found for item type {item_type}.")
             
@@ -65,13 +74,13 @@ class ConveyorTrackingSystem:
         self.cobot1 = Cobot("Cobot 1 (Sorter)")
         self.cobot2 = Cobot("Cobot 2 (Picker)")
         self.sorted_items = []  # List to track sorted items ready for pickup
-        self.boxes = {
-            "Box-A": [], 
-            "Box-B": [], 
-            "Box-C": [], 
-            "Box-D": [], 
-            "Box-E": []
-        }  # Dictionary to hold boxes for different item types
+        # self.boxes_target = {
+        #     "Box-A": [], 
+        #     "Box-B": [], 
+        #     "Box-C": [], 
+        #     "Box-D": [], 
+        #     "Box-E": []
+        # Dictionary to hold boxes for different item types
 
     def run(self):
         iteration = 0
