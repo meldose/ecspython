@@ -22,8 +22,7 @@ class Camera:
             self.item_type = None
         return self.item_detected, self.item_position, self.item_type
 
-# Defining a Class called Cobot 
-
+# Defining a Class called Cobot  
 class Cobot:
     def __init__(self, name):
         self.name = name
