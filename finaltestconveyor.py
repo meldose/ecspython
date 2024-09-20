@@ -40,6 +40,7 @@ class Cobot:
         else:
             print(f"{self.name} is currently busy sorting.")
             return False
+        
 # defining an function called pick_sorted_item 
     def pick_sorted_item(self, item_type):
         if not self.is_busy:
@@ -52,7 +53,6 @@ class Cobot:
             print(f"{self.name} is currently busy picking up items.")
 
 # Defining a Class called ConveyorTrackingSystem 
-
 class ConveyorTrackingSystem:
     def __init__(self):
         self.camera = Camera()
