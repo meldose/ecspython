@@ -32,7 +32,7 @@ class Cobot:
         if not self.is_busy:
             print(f"{self.name} is moving to sort the item at position {position}, identified as {item_type}.")
             self.is_busy = True
-            time.sleep(2)  # Simulate sorting time
+            time.sleep(4) # Simulate sorting time
             print(f"{self.name} has sorted the item (type: {item_type}) and placed it in the conveyor belt for Cobot2")
             self.is_busy = False
             return True  # Sorting done
@@ -73,7 +73,7 @@ class Cobot:
         if not self.is_busy:
             print(f"{self.name} is moving to pick up the sorted item of type {item_type} from the sorted area.")
         self.is_busy = True
-        time.sleep(2)  # Simulate picking up sorted item
+        time.sleep(4)  # Simulate picking up sorted item
         print(f"{self.name} has picked the sorted item of type {item_type} from the sorted area.")
 
         ########################################DONE#############################################################
@@ -97,16 +97,16 @@ class ConveyorTrackingSystem:
         self.cobot2 = Cobot("Cobot 2 (Picker)")
         self.sorted_items = []  # List to track sorted items ready for pickup
         self.boxes = {
-            "Box-a": [1], 
-            "Box-b": [1], 
-            "Box-c": [1], 
-            "Box-d": [1], 
-            "Box-e": [1]
+            "Box-a": [], 
+            "Box-b": [], 
+            "Box-c": [], 
+            "Box-d": [], 
+            "Box-e": []
         }                    # Dictionary to hold boxes for different item types
 
     def run(self):
         iteration = 0
-        while iteration < 4:  # Add a condition to stop after 4 iterations
+        while iteration < 5:  # Add a condition to stop after 4 iterations
             print("Camera scanning for items on the conveyor belt")
             item_detected, position, item_type = self.camera.detect_item()
             print("##############################################################") 
@@ -129,7 +129,7 @@ class ConveyorTrackingSystem:
                 print("No item detected.")
 
             # Wait before the next camera scan
-            time.sleep(2)
+            time.sleep(4)
             iteration += 1  # Increment the iteration counter
         
         # Print the contents of the boxes at the end
