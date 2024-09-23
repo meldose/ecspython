@@ -1,6 +1,6 @@
 # from neurapy.robot import Robot
-import random
-import time
+import random # import libraries to select random items
+import time # imported time libraries 
 
 # Defining a Class called Camera
 class Camera:
