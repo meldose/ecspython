@@ -13,10 +13,9 @@ class Camera:
     def detect_item(self):
         # Randomly simulate item detection
         self.item_detected = random.choice([True])
-        if self.item_detected:
-            self.item_position = (random.randint(0, 150), random.randint(0, 80))  # Random position on conveyor placed
+        if self.item_detected: # if item is deteced then try to.
+            self.item_position = (random.randint(0, 150), random.randint(0, 80))  # Random position on conveyor placed to pick up
             self.item_type = random.choice(["circle", "square", "rectangle", "oval", "star"]) # Simulate different item types
-            
         else:
             self.item_position = None
             self.item_type = None
@@ -39,27 +38,6 @@ class Cobot:
         else:
             print(f"{self.name} is currently busy sorting.")
             return False
-
-#     # defining a function called pick_sorted_item 
-#     def pick_sorted_item(self, item_type, boxes):
-#         if not self.is_busy:
-#             print(f"{self.name} is moving to pick up the sorted item of type {item_type} from the sorted area.")
-#             self.is_busy = True
-#             time.sleep(2)  # Simulate picking up sorted item
-#             print(f"{self.name} has picked the sorted item of type {item_type} from the sorted area.")
-
-# ########################################DONE#############################################################
-#             # Place the picked item in the correct box
-
-#             if item_type in boxes:
-#                 boxes[item_type].append(boxes)  # Add the item to the corresponding box
-#                 print(f"{self.name} has placed the item of type {item_type} in the {boxes} box.")
-#             else:
-#                 print(f"Error: No box found for item type {item_type}.")
-            
-#             self.is_busy = False
-#         else:
-#             print(f"{self.name} is currently busy picking up items.")
 
 # defining a function called pick_sorted_item 
     def pick_sorted_item(self, item_type, boxes):
