@@ -48,7 +48,7 @@ class Cobot:
         "oval": "Box-d",
         "star": "Box-e"
     }
-        if not self.is_busy:
+        if not self.is_busy: # if cobot2 is not busy then
             print(f"{self.name} is moving to pick up the sorted item of type {item_type} from the sorted area.")
         self.is_busy = True
         time.sleep(4)  # Simulate picking up sorted item
@@ -56,10 +56,10 @@ class Cobot:
 
         ########################################DONE#############################################################
         # Place the picked item in the correct box
-        box_name = box_mapping.get(item_type)
-        if box_name:
-            boxes[box_name].append(1)  # Add the item to the corresponding box
-            print(f"{self.name} has placed the item of type {item_type} in {box_name}.")
+        box = box_mapping.get(item_type)
+        if box:
+            boxes[box].append(1)  # Add the item to the corresponding box
+            print(f"{self.name} has placed the item of type {item_type} in {box}.")
         else:
             print(f"Error: No box found for item type {item_type}.")    
         self.is_busy = False
