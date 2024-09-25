@@ -13,7 +13,7 @@ bins = {"red": [5, 4], "blue": [5, 4], "green": [5, 2]}  # Sorting bins for Cobo
 object_position = [0, 0]   # Position of object on the conveyor
 
 # Different items (sorted by color)
-items = [{"color": "red", "pos": [0, 1]}, {"color": "blue", "pos": [5, 1]}, {"color": "green", "pos": [10, 1]}]
+items = [{"color": "red", "pos": [0, 1]}, {"color": "blue", "pos": [5, 1]}, {"color": "green", "pos": [8, 1]}]
 item_speed = conveyor_speed
 
 # Create figure
