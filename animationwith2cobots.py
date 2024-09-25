@@ -3,12 +3,12 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 # Parameters
-conveyor_length = 20       # Conveyor length
-conveyor_speed = 0.05      # Conveyor belt speed
+conveyor_length = 30       # Conveyor length
+conveyor_speed = 0.02     # Conveyor belt speed
 cobot1_pos = [5, 3]        # Initial position of Cobot 1
 cobot2_pos = [15, 3]       # Initial position of Cobot 2
 work_area_width = 20       # Width of the work area
-work_area_height = 6       # Height of the work area
+work_area_height = 10       # Height of the work area
 bins = {"red": [5, 5], "blue": [5, 4], "green": [5, 2]}  # Sorting bins for Cobot 1
 object_position = [0, 1]   # Position of object on the conveyor
 
@@ -23,7 +23,7 @@ ax.set_ylim(0, work_area_height)
 ax.set_title("Conveyor Sorting and Picking with Two Cobots")
 
 # Conveyor belt (horizontal line)
-conveyor_belt, = ax.plot([], [], lw=5, color='black')
+conveyor_belt, = ax.plot([], [], lw=25, color='black')
 
 # Cobots (blue and red circles)
 cobot1, = ax.plot([], [], 'bo', markersize=15, label="Cobot 1")
