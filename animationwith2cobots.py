@@ -9,8 +9,8 @@ cobot1_pos = [5, 3]        # Initial position of Cobot 1
 cobot2_pos = [15, 3]       # Initial position of Cobot 2
 work_area_width = 20       # Width of the work area
 work_area_height = 10       # Height of the work area
-bins = {"red": [5, 5], "blue": [5, 4], "green": [5, 2]}  # Sorting bins for Cobot 1
-object_position = [0, 1]   # Position of object on the conveyor
+bins = {"red": [5, 4], "blue": [5, 4], "green": [5, 2]}  # Sorting bins for Cobot 1
+object_position = [0, 0]   # Position of object on the conveyor
 
 # Different items (sorted by color)
 items = [{"color": "red", "pos": [0, 1]}, {"color": "blue", "pos": [5, 1]}, {"color": "green", "pos": [10, 1]}]
@@ -20,14 +20,14 @@ item_speed = conveyor_speed
 fig, ax = plt.subplots(figsize=(10, 5))
 ax.set_xlim(0, work_area_width)
 ax.set_ylim(0, work_area_height)
-ax.set_title("Conveyor Sorting and Picking with Two Cobots")
+ax.set_title("CONVEYOR TRACKING WITH 2 COBOTS FOR SORTING AND PICKING")
 
 # Conveyor belt (horizontal line)
 conveyor_belt, = ax.plot([], [], lw=25, color='black')
 
 # Cobots (blue and red circles)
-cobot1, = ax.plot([], [], 'bo', markersize=15, label="Cobot 1")
-cobot2, = ax.plot([], [], 'ro', markersize=15, label="Cobot 2")
+cobot1, = ax.plot([], [], 'yo', markersize=20, label="Cobot 1(sorter)")
+cobot2, = ax.plot([], [], 'co', markersize=20, label="Cobot 2)(Picker)")
 
 # Items (objects on the conveyor)
 item_markers = []
