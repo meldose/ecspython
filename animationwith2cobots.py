@@ -4,7 +4,7 @@ import matplotlib.animation as animation
 
 # Parameters
 conveyor_length = 30       # Conveyor length
-conveyor_speed = 0.02     # Conveyor belt speed
+conveyor_speed = 0.05     # Conveyor belt speed
 cobot1_pos = [5, 3]        # Initial position of Cobot 1
 cobot2_pos = [15, 3]       # Initial position of Cobot 2
 work_area_width = 20       # Width of the work area
@@ -13,11 +13,12 @@ bins = {"red": [5, 4], "blue": [5, 4], "green": [5, 2]}  # Sorting bins for Cobo
 object_position = [0, 0]   # Position of object on the conveyor
 
 # Different items (sorted by color)
-items = [{"color": "red", "pos": [0, 1]}, {"color": "blue", "pos": [5, 1]}, {"color": "green", "pos": [8, 1]}]
+items = [ {"color": "red", "pos": [5, 1]},{"color":"blue","pos":[0,1]}]
+# {"color": "red", "pos": [0, 1]},
 item_speed = conveyor_speed
 
 # Create figure
-fig, ax = plt.subplots(figsize=(10, 5))
+fig, ax = plt.subplots(figsize=(5, 6))
 ax.set_xlim(0, work_area_width)
 ax.set_ylim(0, work_area_height)
 ax.set_title("CONVEYOR TRACKING WITH 2 COBOTS FOR SORTING AND PICKING")
