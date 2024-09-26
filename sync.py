@@ -2,8 +2,8 @@
 import time
 
 # Sorting robot and picking robot initialization
-sorting_robot = Robot()
-picking_robot = Robot()
+sorting_robot = robot1
+picking_robot = robot2
 
 conveyor_speed = 0.2  # Conveyor speed in meters per second
 detection_time = time.time()  # Time when the object was detected
