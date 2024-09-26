@@ -61,7 +61,12 @@ def update(frame):
             item["pos"][0] += item_speed
         else:
             item["pos"][0] = 0  # Reset object when it reaches the end
-
+            
+            
+    for i, item in enumerate(items):
+        if item["pos"][0] < conveyor_length:
+            item["pos"][0] += item_speed
+        
     # Cobot 1: Sort items
     for item in items:
         if abs(cobot1_pos[0] - item["pos"][0]) < 1:  # Cobot 1 picks the item
