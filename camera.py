@@ -11,14 +11,19 @@ def initialize_camera(camera_index=0):
 
 # Function to process the frame
 def process_frame(frame):
+    
+    
     # Convert to grayscale (example of processing)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    
     
     # Thresholding (simple binary segmentation example)
     _, thresh = cv2.threshold(gray, 128, 255, cv2.THRESH_BINARY)
     
+    
     # Contour detection to find objects
     contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    
     
     # Draw bounding boxes around detected objects
     for cnt in contours:
